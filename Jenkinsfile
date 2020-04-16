@@ -20,11 +20,11 @@ pipeline {
 			}
 		}
 		
-		//stage("Email"){
-		//	steps{
-		//		emailext (to: 'bharath.selenium26@gmail.com', replyTo: 'bharath.selenium26@gmail.com', subject: "Email Report from - '${env.JOB_NAME}' ", body: readFile("target/surefire-reports/emailable-report.html"), mimeType: 'text/html');
-		//	}
-		//}
+		stage("Email"){
+			steps{
+				emailext (to: 'mohansairam423@gmail.com', replyTo: 'mohansairam423@gmail.com', subject: "Email Report from - '${env.JOB_NAME}' ", body: readFile("target/surefire-reports/emailable-report.html"), mimeType: 'text/html');
+			}
+		}
 	}
 	
 
