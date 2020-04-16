@@ -19,7 +19,7 @@ pipeline {
 				
 				step([$class : 'Publisher', reportFilenamePattern : '**/testng-results.xml'])
 				getCurrentBuildFailedTests()
-				sh 'curl -H  --data "{\"name\":\"Mohan\"}" http://devops.integration.user:devops@127.0.0.1:8082/api/sn_devops/v1/devops/orchestration/stepMapping?toolId=fd23e7tryeyu73'
+				curl -H  --data "{\"name\":\"Mohan\"}" http://devops.integration.user:devops@127.0.0.1:8082/api/sn_devops/v1/devops/orchestration/stepMapping?toolId=fd23e7tryeyu73
 			}
 		}
 		
