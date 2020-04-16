@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class SampleTest {
 
-	@Test
+	//@Test
 	public void testChrome() {
 		System.out.println("Starting the testcase - testChrome " + System.currentTimeMillis());
 		System.out.println("I am testChrome");
