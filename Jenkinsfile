@@ -62,7 +62,7 @@ def getCurrentBuildFailedTests(String stageName) {
    def json = new groovy.json.JsonBuilder()
    json rootKey: jsonObj
    println groovy.json.JsonOutput.prettyPrint(json.toString())
-   def apiCall =  'curl -X POST -H "Content-Type: application/json" "'"{'username':'abc','password':'abc'}"'" http://devops.integration.user:devops@127.0.0.1:8082/api/sn_devops/v1/devops/orchestration/stepMapping?toolId=fd23e7t'.execute()
+	  def apiCall =  'curl -X POST -H "Content-Type: application/json" "'"${json}"'" http://devops.integration.user:devops@127.0.0.1:8082/api/sn_devops/v1/devops/orchestration/stepMapping?toolId=fd23e7t'.execute()
    //def client = new wslite.rest.RESTClient('http://devops.integration.user:devops@127.0.0.1:8082')
    //def response = client.post(path: 'api/sn_devops/v1/devops/orchestration/stepMapping?toolId=fd23e7t',
     //accept: 'application/json',
