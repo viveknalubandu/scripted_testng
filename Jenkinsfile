@@ -61,11 +61,8 @@ def getCurrentBuildFailedTests(String stageName) {
    jsonObj.put("duration", result.getDuration())
    jsonObj.put("buildNumber", env.BUILD_NUMBER)
    jsonObj.put("pipelineName", env.JOB_NAME)
-   def json = new groovy.json.JsonBuilder()
-   json rootKey: jsonObj
-	  def x = '{"repository":{"url":"repoUrl"}}'
-   //println groovy.json.JsonOutput.prettyPrint(json.toString())
-   //'curl -X POST -H "Content-Type: application/json" --data "@/tmp/output.json" http://devops.integration.user:devops@127.0.0.1:8082/api/sn_devops/v1/devops/orchestration/stepMapping?toolId=fd23e7t'.execute()
+   def json = new groovy.json.JsonBuilder(jsonObj)
+   //json rootKey: jsonObj
    def response = ["curl", "-k", "-X", "POST", "-H", "Content-Type: application/json", "-d", "${json}", "http://devops.integration.user:devops@127.0.0.1:8082/api/sn_devops/v1/devops/orchestration/stepMapping?toolId=fd23e7t"].execute()
    response.waitFor()
 println response.err.text
