@@ -21,13 +21,13 @@ public class SampleTest {
 		URL url = null;
 		try {
 			//url = new URL("http://localhost:4444/wd/hub");
-			url = new URL("https://github.com/MohanSairam423/automation/edit/master/src/test/java/com/slokam/automation/opencart/testscripts/SampleTest.java");
+			url = new URL("http://localhost:8082");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		WebDriver driver = new RemoteWebDriver(url,cap);
 		
-		driver.get("https://github.com/MohanSairam423/automation/edit/master/src/test/java/com/slokam/automation/opencart/testscripts/SampleTest.java");
+		driver.get("http://localhost:8082");
 		driver.quit();
 		System.out.println("End of my testcase - testChrome " + System.currentTimeMillis());
 	}
