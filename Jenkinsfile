@@ -18,11 +18,8 @@ pipeline {
 				sh 'mvn clean test'
 				
 				step([$class : 'Publisher', reportFilenamePattern : '**/testng-results.xml'])
-				getCurrentBuildFailedTests()
-				//def jsonObj = [name:"Mohan"]
-				println "Json"
-				//curl -H  --data "{\"name\":\"Mohan\"}" http://devops.integration.user:devops@127.0.0.1:8082/api/sn_devops/v1/devops/orchestration/stepMapping?toolId=fd23e7tryeyu73
-				sh 'curl -X POST -H "Content-Type: application/json" "${jsonObj}" http://devops.integration.user:devops@127.0.0.1:8082/api/sn_devops/v1/devops/orchestration/stepMapping?toolId=fd23e7t'
+				getCurrentBuildFailedTests("Checkout, Test & Publish")
+				//sh 'curl -X POST -H "Content-Type: application/json" "${jsonObj}" http://devops.integration.user:devops@127.0.0.1:8082/api/sn_devops/v1/devops/orchestration/stepMapping?toolId=fd23e7t'
 			}
 		}
 		
@@ -36,7 +33,9 @@ pipeline {
 
 }
 
-def getCurrentBuildFailedTests() {
+def getCurrentBuildFailedTests(String stageName) {
+					    def jsonObj = [:]
+					    jsonObj.put("stageName", stageName)
 					    def failedTests = []
 					    def build = currentBuild.build()
 
@@ -53,6 +52,15 @@ def getCurrentBuildFailedTests() {
 						
 						def result = build.getAction(hudson.plugins.testng.TestNGTestResultBuildAction).getResult();
 						    if (result) {
+							jsonObj.put("name", result.getDisplayName())
+							jsonObj.put("url", result.getUpUrl())	
+							jsonObj.put("totalTests", result.getTotalCount())
+							jsonObj.put("passedTests", result.getPassCount())
+							jsonObj.put("failedTests", result.getFailCount())
+							jsonObj.put("skippedTests", result.getSkipCount())
+							jsonObj.put("duration", result.getDuration()) 
+							sh 'curl -X POST -H "Content-Type: application/json" "${jsonObj}" http://devops.integration.user:devops@127.0.0.1:8082/api/sn_devops/v1/devops/orchestration/stepMapping?toolId=fd23e7t'    
+							    
 							def testName = result.getDisplayName()
 							def testUrl = result.getUpUrl()
 							def totalExecuted = result.getTotalCount()
