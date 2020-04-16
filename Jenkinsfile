@@ -58,8 +58,8 @@ def getCurrentBuildFailedTests() {
 									    println "Pass : ${pass}"
 									    def fail = obj.getFailCount()
 									    println "Fail : ${fail}"
-									    def total = obj.getTotalCount()
-									    println "Total : ${total}"
+									    def totalClass = obj.getTotalCount()
+									    println "Total : ${totalClass}"
 								    }
 							    }
 						    }
