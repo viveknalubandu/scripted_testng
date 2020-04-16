@@ -46,7 +46,7 @@ def getCurrentBuildFailedTests() {
 						for (def failure in failures) {
 						    failedTests.add(['name': failure.name, 'url': failure.url, 'details': failure.errorDetails])
 						}
-						def result = build.getActions(hudson.plugins.testng.TestNGTestResultBuildAction.class).getResult();
+						def result = build.getAction(hudson.plugins.testng.TestNGTestResultBuildAction).getResult();
 						    if (result) {
 						    	def testList = result.getTestList();
 							    if (testList) {
