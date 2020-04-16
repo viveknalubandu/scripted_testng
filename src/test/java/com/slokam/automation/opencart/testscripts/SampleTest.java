@@ -27,7 +27,7 @@ public class SampleTest {
 		}
 		WebDriver driver = new RemoteWebDriver(url,cap);
 		
-		driver.get("http://www.google.com");
+		driver.get("https://github.com/MohanSairam423/automation/edit/master/src/test/java/com/slokam/automation/opencart/testscripts/SampleTest.java");
 		driver.quit();
 		System.out.println("End of my testcase - testChrome " + System.currentTimeMillis());
 	}
