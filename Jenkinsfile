@@ -18,11 +18,7 @@ pipeline {
 				sh 'mvn clean test'
 				
 				step([$class : 'Publisher', reportFilenamePattern : '**/testng-results.xml'])
-				try{
-					getCurrentBuildFailedTests()
-				} catch(e) {
-					throw e
-				}
+				getCurrentBuildFailedTests()
 			}
 		}
 		
