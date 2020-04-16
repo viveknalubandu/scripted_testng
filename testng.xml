@@ -8,4 +8,12 @@
 			<class name="com.slokam.automation.opencart.testscripts.SampleTest"></class>
 		</classes>
 	</test>
+	<test name="advanced">
+		<!-- <packages>
+			<package name="com.slokam.automation.opencart.testscripts"></package>
+		</packages> -->
+		<classes>
+			<class name="com.slokam.automation.opencart.testscripts.AdvancedTest"></class>
+		</classes>
+	</test>
 </suite>
