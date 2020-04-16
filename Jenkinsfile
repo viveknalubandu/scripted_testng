@@ -62,7 +62,6 @@ def getCurrentBuildFailedTests(String stageName) {
      println "Fail : ${fail}"
      def totalClass = obj.getTotalCount()
      println "Total : ${totalClass}"
-    }
    }
   }
  }
