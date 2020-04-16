@@ -18,6 +18,11 @@ public class SampleTest {
 		Assert.assertEquals("test", "test");
 	}
 	
+	@Test
+	public void sampleMohan2() {
+		Assert.assertEquals("test", "test");
+	}
+	
 	//@Test
 	public void testChromeMohan() {
 		WebDriver driver = new ChromeDriver();
