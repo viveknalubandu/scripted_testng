@@ -14,7 +14,7 @@ import org.testng.Assert;
 public class SampleTest {
 	
 	@Test
-	public void testChrome1() {
+	public void testChrome2() {
 		WebDriver driver = new ChromeDriver();
 		//it will open the goggle page
 		driver.get("http://google.in"); 
