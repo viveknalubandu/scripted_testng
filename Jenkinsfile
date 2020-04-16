@@ -67,6 +67,4 @@ def getCurrentBuildFailedTests(String stageName) {
   }
  }
 }
-
-return failedTests
 }
