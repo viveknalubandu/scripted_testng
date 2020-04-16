@@ -50,7 +50,9 @@ def getCurrentBuildFailedTests() {
 						    if (result) {
 						    	def testList = result.getTestList();
 							    for (def test in testList) {
-							    	var classList = test.getClassList();
+								println "TestList"
+							    	def classList = test.getClassList();
+								    println "ClassList"
 								    for (def obj in classList) {
 									def name = obj.getCanonicalName()
 									    println "Class Name : ${name}"
