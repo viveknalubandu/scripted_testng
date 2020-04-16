@@ -14,6 +14,11 @@ import org.testng.Assert;
 public class SampleTest {
 	
 	@Test
+	public void sampleMohan() {
+		Assert.assertEquals("test", "test");
+	}
+	
+	//@Test
 	public void testChromeMohan() {
 		WebDriver driver = new ChromeDriver();
 		//it will open the goggle page
