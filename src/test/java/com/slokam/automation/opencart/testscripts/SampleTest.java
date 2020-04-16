@@ -21,7 +21,7 @@ public class SampleTest {
 		URL url = null;
 		try {
 			//url = new URL("http://localhost:4444/wd/hub");
-			url = new URL("http://www.google.com");
+			url = new URL("https://github.com/MohanSairam423/automation/edit/master/src/test/java/com/slokam/automation/opencart/testscripts/SampleTest.java");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
