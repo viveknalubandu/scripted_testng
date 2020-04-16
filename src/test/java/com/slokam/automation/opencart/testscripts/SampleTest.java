@@ -9,12 +9,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 
 public class SampleTest {
 	
 	@Test
 	public void testFireFox() {
-		WebDriver driver = newFirefoxDriver();
+		WebDriver driver = new FirefoxDriver();
 		//it will open the goggle page
 		driver.get("http://google.in"); 
 		//we expect the title “Google “ should be present 
