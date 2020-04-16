@@ -52,10 +52,6 @@ def getCurrentBuildFailedTests(String stageName) {
 
   def result = build.getAction(hudson.plugins.testng.TestNGTestResultBuildAction).getResult();
   if (result) {
- 
-   def json = groovy.json.JsonOutput.toJson([foo: 'bar', baz: [1]])
- 
-   new File("/tmp/output.json").write(json)
    jsonObj.put("name", result.getDisplayName())
    jsonObj.put("url", result.getUpUrl())
    jsonObj.put("totalTests", result.getTotalCount())
