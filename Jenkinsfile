@@ -46,6 +46,23 @@ def getCurrentBuildFailedTests() {
 						for (def failure in failures) {
 						    failedTests.add(['name': failure.name, 'url': failure.url, 'details': failure.errorDetails])
 						}
+						def result = build.getActions(hudson.plugins.testng.TestNGTestResultBuildAction.class).getResult();
+						    if (result) {
+						    	def testList = result.getTestList();
+							    if (testList) {
+							    	var classList = testList.getClassList();
+								    for (def obj in classList) {
+									def name = obj.getCanonicalName()
+									    println "Class Name : ${name}"
+									    def pass = obj.getPassCount()
+									    println "Pass : ${pass}"
+									    def fail = obj.getFailCount()
+									    println "Fail : ${fail}"
+									    def total = obj.getTotalCount()
+									    println "Total : ${total}"
+								    }
+							    }
+						    }
 					    }
 
 					    return failedTests
