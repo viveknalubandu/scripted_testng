@@ -19,7 +19,8 @@ pipeline {
 				
 				step([$class : 'Publisher', reportFilenamePattern : '**/testng-results.xml'])
 				getCurrentBuildFailedTests()
-				def json = [name:Mohan]
+				def json = [name:"Mohan"]
+				println "Json"
 				//curl -H  --data "{\"name\":\"Mohan\"}" http://devops.integration.user:devops@127.0.0.1:8082/api/sn_devops/v1/devops/orchestration/stepMapping?toolId=fd23e7tryeyu73
 				sh 'curl -X POST -H "Content-Type: application/json" "${json}" http://devops.integration.user:devops@127.0.0.1:8082/api/sn_devops/v1/devops/orchestration/stepMapping?toolId=fd23e7t'
 			}
