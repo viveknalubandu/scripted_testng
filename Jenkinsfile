@@ -59,8 +59,8 @@ def getCurrentBuildFailedTests(String stageName) {
    jsonObj.put("failedTests", result.getFailCount())
    jsonObj.put("skippedTests", result.getSkipCount())
    jsonObj.put("duration", result.getDuration())
-   jsonObj.put("buildNumber", ${env.BUILD_NUMBER})
-   jsonObj.put("pipelineName", ${env.JOB_NAME})
+   jsonObj.put("buildNumber", env.BUILD_NUMBER)
+   jsonObj.put("pipelineName", env.JOB_NAME)
    def json = new groovy.json.JsonBuilder()
    json rootKey: jsonObj
    println groovy.json.JsonOutput.prettyPrint(json.toString())
