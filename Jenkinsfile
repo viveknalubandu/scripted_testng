@@ -19,24 +19,7 @@ pipeline {
 				
 				step([$class : 'Publisher', reportFilenamePattern : '**/testng-results.xml'])
 				try{
-				script {
-					def getCurrentBuildFailedTests() {
-					    def failedTests = []
-					    def build = currentBuild.build()
-
-					    def action = build.getActions(hudson.tasks.junit.TestResultAction.class)
-					    if (action) {
-						def failures = build.getAction(hudson.tasks.junit.TestResultAction.class).getFailedTests()
-						println "${failures.size()} Test Results Found"
-						for (def failure in failures) {
-						    failedTests.add(['name': failure.name, 'url': failure.url, 'details': failure.errorDetails])
-						}
-					    }
-
-					    return failedTests
-					}
-				}
-				getCurrentBuildFailedTests()
+					getCurrentBuildFailedTests()
 				} catch(e) {
 					throw e
 				}
@@ -52,3 +35,19 @@ pipeline {
 	
 
 }
+
+def getCurrentBuildFailedTests() {
+					    def failedTests = []
+					    def build = currentBuild.build()
+
+					    def action = build.getActions(hudson.tasks.junit.TestResultAction.class)
+					    if (action) {
+						def failures = build.getAction(hudson.tasks.junit.TestResultAction.class).getFailedTests()
+						println "${failures.size()} Test Results Found"
+						for (def failure in failures) {
+						    failedTests.add(['name': failure.name, 'url': failure.url, 'details': failure.errorDetails])
+						}
+					    }
+
+					    return failedTests
+					}
