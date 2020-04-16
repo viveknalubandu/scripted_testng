@@ -18,6 +18,7 @@ pipeline {
 				sh 'mvn clean test'
 				
 				step([$class : 'Publisher', reportFilenamePattern : '**/testng-results.xml'])
+				try{
 				script {
 					def getCurrentBuildFailedTests() {
 					    def failedTests = []
@@ -36,6 +37,9 @@ pipeline {
 					}
 				}
 				getCurrentBuildFailedTests()
+				} catch(e) {
+					throw e
+				}
 			}
 		}
 		
