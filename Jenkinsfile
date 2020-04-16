@@ -49,8 +49,8 @@ def getCurrentBuildFailedTests() {
 						def result = build.getAction(hudson.plugins.testng.TestNGTestResultBuildAction).getResult();
 						    if (result) {
 						    	def testList = result.getTestList();
-							    if (testList) {
-							    	var classList = testList.getClassList();
+							    for (def test in testList) {
+							    	var classList = test.getClassList();
 								    for (def obj in classList) {
 									def name = obj.getCanonicalName()
 									    println "Class Name : ${name}"
