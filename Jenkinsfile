@@ -6,15 +6,12 @@ pipeline {
     snDevOpsStep()
     checkout scm
     sh 'mvn clean test'
-
     step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
     getCurrentBuildFailedTests("Checkout, Test & Publish")
    }
   }
  }
 }
-
-
 
 def getCurrentBuildFailedTests(String stageName) {
  def jsonObj = [: ]
