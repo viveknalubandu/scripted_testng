@@ -14,15 +14,14 @@ pipeline {
  }
 }
 
+
+
 def getCurrentBuildFailedTests(String stageName) {
  def jsonObj = [: ]
  jsonObj.put("stageName", stageName)
  def build = currentBuild.build()
-
  def action = build.getActions(hudson.plugins.testng.TestNGTestResultBuildAction.class)
  if (action) {
-
-
   def result = build.getAction(hudson.plugins.testng.TestNGTestResultBuildAction).getResult();
   if (result) {
    jsonObj.put("name", result.getDisplayName())
