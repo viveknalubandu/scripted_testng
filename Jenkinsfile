@@ -35,8 +35,9 @@ def getCurrentBuildFailedTests(String stageName) {
    response.waitFor()
    println response.err.text
    println response.text
-
-
+  }
+ }
+}  
    def testName = result.getDisplayName()
    def testUrl = result.getUpUrl()
    def totalExecuted = result.getTotalCount()
