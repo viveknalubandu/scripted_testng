@@ -7,7 +7,7 @@ pipeline {
     checkout scm
     sh 'mvn clean test'
     step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-    getCurrentBuildFailedTests("Checkout, Test & Publish")
+    //getCurrentBuildFailedTests("Checkout, Test & Publish")
    }
   }
  }
