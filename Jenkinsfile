@@ -3,7 +3,7 @@ pipeline {
  stages {
   stage("Checkout, Test & Publish") {
    steps {
-    //snDevOpsStep()
+    snDevOpsStep()
     checkout scm
     sh 'mvn clean test'
     step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
