@@ -2,6 +2,7 @@ stage('Checkout') {
     snDevOpsStep()
     snDevOpsChange()
     node {
+        echo 'Checking out..'
         checkout scm
     }
 }
