@@ -1,7 +1,8 @@
 pipeline {
- agent any
+ agent none
  stages {
   stage("Checkout"){
+   agent none
    steps{
      snDevOpsStep()
      snDevOpsChange()
@@ -9,6 +10,7 @@ pipeline {
    }
   }
   stage("Tests") {
+   agent any
    steps {
     snDevOpsStep()
     sh 'mvn clean test'
