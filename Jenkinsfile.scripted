@@ -1,0 +1,14 @@
+stage('Checkout') {
+    snDevOpsStep()
+    snDevOpsChange()
+    node {
+        checkout scm
+    }
+}
+stage('Tests'){
+  snDevOpsStep()
+  node {
+    sh 'mvn clean test'
+    step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+  }
+}
