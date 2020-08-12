@@ -8,7 +8,7 @@ pipeline {
      checkout scm
    }
   }
-  stage("Checkout, Test & Publish") {
+  stage("Test & Publish") {
    steps {
     snDevOpsStep()
     sh 'mvn clean test'
