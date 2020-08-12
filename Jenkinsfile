@@ -1,10 +1,16 @@
 pipeline {
  agent any
  stages {
+  stage("Checkout"){
+   steps{
+     snDevOpsStep()
+     snDevOpsChange()
+     checkout scm
+   }
+  }
   stage("Checkout, Test & Publish") {
    steps {
     snDevOpsStep()
-    checkout scm
     sh 'mvn clean test'
     step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
    }
