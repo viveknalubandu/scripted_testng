@@ -1,8 +1,8 @@
 pipeline {
- agent none
+ agent any
  stages {
   stage("Checkout"){
-   agent none
+   agent any
    steps{
      snDevOpsStep()
      snDevOpsChange()
