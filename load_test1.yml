@@ -1,0 +1,23 @@
+---
+scenarios:
+  scen1:
+    think-time: 0.5s
+    requests:
+    - http://localhost:8080/
+  scen2:
+    think-time: 0.5s
+    requests:
+    - http://localhost:8089/
+
+execution:
+- scenario: scen1
+  hold-for: 1m
+- scenario: scen2
+  hold-for: 1m
+
+reporting:
+- module: passfail
+  criteria:
+  - avg-rt>5000ms for 5s, stop as failed
+- module: junit-xml
+  data-source: pass-fail
