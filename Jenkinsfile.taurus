@@ -17,6 +17,6 @@ stage('Perf Tests'){
   snDevOpsStep()
   node {
     bzt "load_test1.yml"
-    step([$class: 'JUnitResultArchiver', reportFilenamePattern: '**/xunit.xml'])
+    junit '**/xunit.xml
   }
 }
