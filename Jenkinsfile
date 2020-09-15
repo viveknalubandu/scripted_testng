@@ -13,7 +13,7 @@ pipeline {
    steps {
     snDevOpsStep()
     checkout scm
-    
+    mvn clean test
     step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
    }
   }
