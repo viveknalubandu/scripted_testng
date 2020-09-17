@@ -1,8 +1,3 @@
-pipeline {
-    agent any
-    tools {
-        maven 'Maven'
-    }
 stage('Checkout') {
     snDevOpsStep()
     snDevOpsChange()
@@ -24,5 +19,4 @@ stage('Perf Tests'){
     bzt "load_test1.yml"
     junit '**/xunit.xml'
   }
-}
 }
