@@ -1,22 +1,28 @@
-stage('Checkout') {
-    snDevOpsStep()
-    snDevOpsChange()
-    node {
-        echo 'Checking out..'
-        checkout scm
-    }
-}
-stage('Tests'){
-  snDevOpsStep()
-  node {
-    sh 'mvn clean test'
-    step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-  }
-}
-stage('Perf Tests'){
-  snDevOpsStep()
-  node {
-    bzt "load_test1.yml"
-    junit '**/xunit.xml'
-  }
+pipeline {
+	agent any
+	tools {
+		maven 'Maven'
+	}
+	stage('Checkout') {
+		snDevOpsStep()
+		snDevOpsChange()
+		node {
+			echo 'Checking out..'
+			checkout scm
+		}
+	}
+	stage('Tests') {
+		snDevOpsStep()
+		node {
+			sh 'mvn clean test'
+			step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+		}
+	}
+	stage('Perf Tests') {
+		snDevOpsStep()
+		node {
+			bzt "load_test1.yml"
+			junit '**/xunit.xml'
+		}
+	}
 }
