@@ -7,7 +7,7 @@ scenarios:
   scen2:
     think-time: 0.5s
     requests:
-    - http://localhost:8089/
+    - http://localhost:3000/
 
 execution:
 - scenario: scen1
