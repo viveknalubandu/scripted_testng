@@ -20,5 +20,12 @@ pipeline {
     step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
    }
   }
+  stage('Perf Tests'){
+  snDevOpsStep()
+  node {
+    bzt "load_test1.yml"
+    junit '**/xunit.xml'
+   }
+  }
  }
 }
