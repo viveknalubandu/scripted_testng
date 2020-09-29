@@ -1,22 +1,26 @@
-stage('Checkout') {
-    snDevOpsStep()
-    snDevOpsChange()
-    node {
-        echo 'Checking out..'
-        checkout scm
-    }
-}
-stage('Tests'){
-  snDevOpsStep()
-  node {
-    sh 'mvn clean test'
-    step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-  }
-}
-stage('Perf Tests'){
-  snDevOpsStep()
-  node {
-    bzt "load_test1.yml"
-    junit '**/xunit.xml'
-  }
-}
+def mvn_version = 'Maven'
+ stage('Checkout') {
+     snDevOpsStep()
+     snDevOpsChange()
+     node {
+         echo 'Checking out..'
+         checkout scm
+     }
+ }
+ stage('Tests'){
+   snDevOpsStep()
+   node {
+      withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+        sh 'mvn clean test'
+      }
+     step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+   }
+ }
+ stage('Perf Tests'){
+   snDevOpsStep()
+   node {
+     bzt "load_test1.yml"
+     junit '**/xunit.xml'
+   }
+ }
+ 
