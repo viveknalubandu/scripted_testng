@@ -11,9 +11,9 @@ scenarios:
 
 execution:
 - scenario: scen1
-  hold-for: 1m
+  hold-for: 20s
 - scenario: scen2
-  hold-for: 1m
+  hold-for: 20s
 
 reporting:
 - module: passfail
