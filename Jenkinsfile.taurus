@@ -19,7 +19,7 @@ def mvn_version = 'Maven'
  stage('Perf Tests'){
    snDevOpsStep()
    node {
-     sh '/usr/local/bin/bzt "load_test1.yml"'
+     //sh '/usr/local/bin/bzt "load_test1.yml"'
     // junit '**/xunit.xml'
    }
  }
