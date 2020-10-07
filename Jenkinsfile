@@ -20,7 +20,7 @@ pipeline {
     step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
    }
   }
-  stage('Perf Tests'){
+  stage('Perf Tests11'){
    agent any
    steps{
      snDevOpsStep()
