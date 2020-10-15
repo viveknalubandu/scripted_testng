@@ -7,7 +7,7 @@ pipeline {
   stage("Checkout"){
    agent none
    steps{
-     snDevOpsChange()
+     
    }
    post {
         always {
@@ -23,9 +23,17 @@ pipeline {
     step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
    }
   }
-  stage('Deploy'){
+  stage('Load'){
    agent any
    steps{
+     //bzt "load_test1.yml"
+     //junit '**/xunit.xml'
+   }
+  }
+  stage('Deploy-Change'){
+   agent any
+   steps{
+     snDevOpsChange()
      //bzt "load_test1.yml"
      //junit '**/xunit.xml'
    }
