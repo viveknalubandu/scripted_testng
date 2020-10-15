@@ -4,18 +4,12 @@ pipeline {
     	maven 'Maven'
  }
  stages {
-  stage("Junit") {
-           steps {
-               echo "Junit Testing"
-               sh 'mvn test'
-               sleep 3
-           }
-          post {
-                always {
-                    junit '**/target/surefire-reports/*.xml' 
-                }
-          }
+  stage("Checkout"){
+   agent none
+   steps{
+     snDevOpsChange()
    }
+  }
   stage("Tests") {
    agent any
    steps {
