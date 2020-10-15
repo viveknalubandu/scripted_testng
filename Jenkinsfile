@@ -7,14 +7,17 @@ pipeline {
   stage("Checkout"){
    agent none
    steps{
-     snDevOpsStep()
      snDevOpsChange()
    }
+   post {
+        always {
+          junit '**/target/surefire-reports/*.xml' 
+        }
+      }
   }
   stage("Tests") {
    agent any
    steps {
-    snDevOpsStep()
     checkout scm
     sh 'mvn clean test'
     step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
@@ -23,10 +26,10 @@ pipeline {
   stage('Deploy'){
    agent any
    steps{
-     snDevOpsStep()
      //bzt "load_test1.yml"
      //junit '**/xunit.xml'
    }
   }
+  
  }
 }
