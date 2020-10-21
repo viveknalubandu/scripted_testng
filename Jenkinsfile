@@ -10,6 +10,14 @@ pipeline {
      snDevOpsChange()
    }
   }
+  stage("Unit") {
+   agent any
+   steps {
+    checkout scm
+    sh 'mvn clean test'
+    junit '**/xunit.xml'
+   }
+  }
   stage("Tests") {
    agent any
    steps {
