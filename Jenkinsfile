@@ -17,6 +17,11 @@ pipeline {
     sh 'mvn clean test'
     //step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
    }
+   post {
+       always {
+          junit '**/target/surefire-reports/*.xml' 
+       }
+    } 
   }
   stage('Deploy'){
    agent any
