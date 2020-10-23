@@ -5,7 +5,7 @@ pipeline {
  }
  stages {
   stage("Checkout"){
-   agent none
+   agent any
    steps{
      checkout scm
      sh 'mvn clean test'
