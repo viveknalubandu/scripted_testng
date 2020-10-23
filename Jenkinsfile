@@ -7,21 +7,22 @@ pipeline {
   stage("Checkout"){
    agent none
    steps{
-     snDevOpsChange()
+     checkout scm
+     sh 'mvn clean test'
    }
   }
+  post {
+       always {
+          junit '**/target/surefire-reports/*.xml' 
+       }
+  } 
   stage("Tests") {
    agent any
    steps {
     checkout scm
     sh 'mvn clean test'
-    //step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+    step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
    }
-   post {
-       always {
-          junit '**/target/surefire-reports/*.xml' 
-       }
-    } 
   }
   stage('Deploy'){
    agent any
