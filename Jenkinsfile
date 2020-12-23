@@ -29,7 +29,7 @@ pipeline {
   stage('Deploy'){
    agent any
    steps{
-     snDevOpsChange(ignoreErrors:true)
+     snDevOpsChange(ignoreErrors:false)
    }
   }
  }
