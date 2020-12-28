@@ -8,7 +8,6 @@ pipeline {
    agent none
    steps{
      snDevOpsStep()
-     snDevOpsChange()
    }
   }
   stage("Tests") {
@@ -24,6 +23,8 @@ pipeline {
    agent any
    steps{
      snDevOpsStep()
+     snDevOpsChange()
+
      //bzt "load_test1.yml"
      //junit '**/xunit.xml'
    }
