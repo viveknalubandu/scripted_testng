@@ -29,7 +29,27 @@ pipeline {
   stage('Deploy'){
    agent any
    steps{
-     snDevOpsChange(ignoreErrors:false)
+     snDevOpsChange(changeRequestDetails: """
+                  {
+                     "setCloseCode":false,
+                     "attributes":{
+                        "requested_by":{
+                           "name":"DevOps System"
+                        },
+                        "category":"Service",
+                        "assignment_group":{
+                           "name":"Incident Management"
+                        },
+                        "assigned_to": "63b4c2cd0bb23200ecfd818393673a95",
+                        "risk":"4",
+                        "business_service":{
+                           "name":"Corpsite Application"
+                        },
+                        "start_date":"2021-02-02 08:00:00",
+                        "end_date":"2021-02-02 08:00:00"
+                     }
+                  }
+                  """)     
    }
   }
  }
