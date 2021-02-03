@@ -37,7 +37,12 @@ pipeline {
                            "name":"DevOps System"
                         },
                         "category":"Service",
-          
+                        "assignment_group":{
+                           "name":"Incident Management"
+                        },
+                        "business_service":{
+                           "name":"Corpsite Application"
+                        },
                         "start_date":"2021-02-02 08:00:00",
                         "end_date":"2021-02-02 08:00:00"  
                      }
