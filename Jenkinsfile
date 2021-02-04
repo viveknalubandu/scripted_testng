@@ -30,7 +30,7 @@ pipeline {
    agent any
    steps{
      snDevOpsChange(changeRequestDetails: """
-                  {
+                  
 		  {
 	"setCloseCode": false,
 	"attributes": {
