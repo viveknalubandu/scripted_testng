@@ -39,6 +39,7 @@ pipeline {
 		},
 		"category": "Service",
 		"type": "normal",
+		"number": "CHG0010000"
 		"short_description": "DevOps Testing",
 		"start_date": "2021-02-02 08:00:00",
 		"end_date": "2021-02-02 08:00:00"
