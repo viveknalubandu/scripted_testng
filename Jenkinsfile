@@ -31,13 +31,16 @@ pipeline {
    steps{
      snDevOpsChange(changeRequestDetails: """
                   {
+		  {
 	"setCloseCode": false,
 	"attributes": {
 		"requested_by": {
 			"name": "DevOps System"
 		},
 		"category": "Service",
-		"type": "standard",
+		"type": "normal",
+		"cmdb_ci": "5678f28f933a31003b4bb095e57ffb87",
+		"business_service": "012e2e47939f31003b4bb095e57ffb07",
 		"short_description": "DevOps Testing",
 		"start_date": "2021-02-02 08:00:00",
 		"end_date": "2021-02-02 08:00:00"
