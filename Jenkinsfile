@@ -31,22 +31,19 @@ pipeline {
    steps{
      snDevOpsChange(changeRequestDetails: """
                   {
-                     "setCloseCode":false,
-                     "attributes":{
-                        "requested_by":{
-                           "name":"DevOps System"
-                        },
-                        "category":"Service",
-                        "assignment_group":{
-                           "name":"Incident Management"
-                        },
-                        "business_service":{
-                           "name":"Corpsite Application"
-                        },
-                        "start_date":"2021-02-02 08:00:00",
-                        "end_date":"2021-02-02 08:00:00"  
-                     }
-                  }
+	"setCloseCode": false,
+	"attributes": {
+		"requested_by": {
+			"name": "DevOps System"
+		},
+		"category": "Service",
+		"state": 3,
+		"short_description": "DevOps Testing",
+		"start_date": "2021-02-02 08:00:00",
+		"end_date": "2021-02-02 08:00:00"
+	}
+}
+
                   """)     
    }
   }
