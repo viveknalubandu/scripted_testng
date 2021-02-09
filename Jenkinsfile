@@ -38,8 +38,7 @@ pipeline {
 			"name": "DevOps System"
 		},
 		"category": "Service",
-		"on_hold": true,
-		"on_hold_reason": "test",
+		"watch_list": "681ccaf9c0a8016400b98a06818d57c7,vivek.nalubandu@snc",
 		"short_description": "DevOps Testing",
 		"start_date": "2021-02-02 08:00:00",
 		"end_date": "2021-02-02 08:00:00"
