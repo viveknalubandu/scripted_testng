@@ -38,7 +38,7 @@ pipeline {
 			"name": "DevOps System"
 		},
 		"category": "Service",
-		"on_hold": true,
+		"cab_required": true,
 		"short_description": "DevOps Testing",
 		"start_date": "2021-02-02 08:00:00",
 		"end_date": "2021-02-02 08:00:00"
