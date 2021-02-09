@@ -37,8 +37,8 @@ pipeline {
 			"name": "DevOps System"
 		},
 		"category": "Service",
-		"configuration_item": "4a995cb20a0a0b92001e89afc07873e5",
-		"business_service":"0151f643931102002c68530b547ffb0f",
+		"configurations_item": "4a995cb20a0a0b92001e89afc07873e5",
+		"businesss_service":"0151f643931102002c68530b547ffb0f",
 		"short_description": "DevOps Testing",
 		"start_date": "2021-02-02 08:00:00",
 		"end_date": "2021-02-02 08:00:00"
