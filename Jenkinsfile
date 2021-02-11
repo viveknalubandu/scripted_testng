@@ -12,6 +12,8 @@ pipeline {
    steps{
      checkout scm
      //sh 'mvn clean test'
+    
+    // test
    }
    
   }
