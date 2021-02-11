@@ -12,6 +12,7 @@ pipeline {
    steps{
      checkout scm
      //sh 'mvn clean test'
+    // sample test branch
    }
    
   }
