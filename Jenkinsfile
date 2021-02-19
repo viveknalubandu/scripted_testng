@@ -31,36 +31,7 @@ pipeline {
   stage('Deploy'){
    agent any
    steps{
-     snDevOpsChange(changeRequestDetails: """
-                  {
-	"setCloseCode": false,
-	"attributes": {
-		"sys_created_by": "1832fbe1d701120035ae23c7ce610369",
-		"sys_updated_by": "56826bf03710200044e0bfc8bcbe5dca",
-		"requested_by": {
-			"name": "test user1"
-		},
-		"watch_list": [{
-			"email": "test.user1@gmail.com"
-		}, {
-			"email": "test.user1@gmail.com"
-		}, {
-			"name": "DevOps System"
-		}, "3948666ae7012300dd926217c2f6a967"],
-		"work_notes_list": ["3948666ae7012300dd926217c2f6a967", "1de44b131b562010b4cbc1f61a4bcb03", "05154b131b562010b4cbc1f61a4bcb13"],
-		"assigned_to": "1de44b131b562010b4cbc1f61a4bcb03",
-		"category": "Service",
-		"sys_created_on": "2021-02-09 18:58:41",
-		"priority": "2",
-		"work_start": "2021-01-05 08:00:00",
-		"work_end": "2021-01-08 08:00:00",
-		"comments": "This update for work notes is from jenkins file",
-		"work_notes": "Update this to work_notes",
-		"start_date": "2021-01-05 08:00:00",
-		"end_date": "2021-01-08 08:00:00"
-	}
-}
-                  """)     
+     snDevOpsChange()     
    }
   }
  }
