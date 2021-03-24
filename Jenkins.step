@@ -4,21 +4,6 @@ pipeline {
     	maven 'Maven'
  }
  stages {
-  stage("Checkout"){
-   agent none
-   steps{
-     snDevOpsStep()
-   }
-  }
-  stage("Tests") {
-   agent any
-   steps {
-    snDevOpsStep()
-    checkout scm
-    sh 'mvn clean test'
-    step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-   }
-  }
   stage('Deploy'){
    agent any
    steps{
