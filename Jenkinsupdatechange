@@ -35,15 +35,30 @@ pipeline {
 	           {
 		"setCloseCode": false,
 		"attributes": {
+			"description": " Test\nhttps://docs.servicenow.com/bundle/quebec-devops/page/product/enterprise-dev-ops/concept/dev-ops-landing-page.html",
+			"priority": "5",
+			"short_description": "Use the ServiceNow® DevOps application with your DevOps toolchain to provide data insights, accelerate change, and increase visibility in your DevOps environmen",
 			"requested_by": {
-				"name": "DevOps System"
+				"email": "abel.tuter@example.com"
 			},
-			"category": "Service",
-			"configurations_item": "4a995cb20a0a0b92001e89afc07873e5",
-			"businesss_service":"0151f643931102002c68530b547ffb0f",
-			"short_description": "DevOps Testing",
-			"start_date": "2021-02-02 08:00:00",
-			"end_date": "2021-02-02 08:00:00"
+			"start_date": "2021-02-05 08:00:00",
+			"end_date": "2021-02-15 08:00:00",
+			"cab_required": true,
+			"cab_delegate": {
+				"name": "Andrew Och"
+			},
+			"justification": "Connect your planning, coding, and orchestration tools, and model your pipeline\nTool support includes Azure DevOps Boards, Jira, and ServiceNow Agile Development 2.0 planning tools, Azure DevOps Repos, GitHub, Bitbucket Server (version 5.10.0), and GitLab SCM coding tools, and Azure DevOps Pipelines, Jenkins, and GitLab CI/CD orchestration tools.\nAutomate deployments by accelerating change\nAutomatically create change requests at any stage for deployments that require change control in your environment, and use change approval policies to automate change request approval to continue deployment through the execution pipeline automatically.\n\nEvaluate and monitor DevOps process and results\nUse the data-driven DevOps Insights dashboard to view change results reports, pipeline value stream, and evaluate the overall DevOps process.\n\njhgdjhgdkjhgfdfhgf",
+			"implementation_plan": "Test implementation plan",
+			"backout_plan": "backout plan if deployment goes wrong can be found at  http://192.168.100.102:8082/sn_devops_step_execution.do?sys_id=e74775e207362010ded2b6930ad3002f&sysparm_stack=sn_devops_step_execution_list.do?",
+			"test_plan": "Test plan to test the tests which test the test-now application",
+			"watch_list": [
+				"a8f98bb0eb32010045e1a5115206fe3a",
+				"62826bf03710200044e0bfc8bcbe5df1"
+			],
+			"work_notes_list": [
+				"a8f98bb0eb32010045e1a5115206fe3a",
+				"62826bf03710200044e0bfc8bcbe5df1"
+			]
 		}
 	}"""
 )     
