@@ -32,7 +32,7 @@ pipeline {
    agent any
    steps{
      snDevOpsChange(	changeRequestDetails: """ {
-	"setCloseCode": false,
+	"setCloseCode": true,
 	"attributes": {
 		"description": "DevOps test ",
 		"priority": "5",
