@@ -50,7 +50,7 @@ pipeline {
 		"implementation_plan": "Test implementation plan",
 		"backout_plan": "backout plan if ",
 		"test_plan": "Test plan to test the tests which test the test-now application",
-		"change_type":"normal"
+		"type":"normal"
 	}
 } """
 )     
