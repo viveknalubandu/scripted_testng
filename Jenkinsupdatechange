@@ -50,7 +50,7 @@ pipeline {
 		"implementation_plan": "Test implementation plan",
 		"backout_plan": "backout plan if ",
 		"test_plan": "Test plan to test the tests which test the test-now application",
-		"type":"normal",
+		"type":"standard",
 		"cmdb_ci":"0c43bc5fc61122750182c13269a7a3ef"
 	}
 } """
