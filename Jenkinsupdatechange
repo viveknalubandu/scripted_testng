@@ -36,7 +36,6 @@ pipeline {
 	"attributes": {
 		"description": "DevOps test ",
 		"priority": "5",
-		"short_description": "Use the DevOps Servicenow",
 		"requested_by": {
 			"email": "abel.tuter@example.com"
 		},
@@ -48,11 +47,11 @@ pipeline {
 		},
 		"justification": "Connect your planning ",
 		"implementation_plan": "Test implementation plan",
-		"backout_plan": "backout plan if ",
 		"test_plan": "Test plan to test the tests which test the test-now application",
-		"type":"standard",
-		"standard_change_template":"563504cc47410200e90d87e8dee490e2",
-		"cmdb_ci":"0c43bc5fc61122750182c13269a7a3ef"
+                "type":"normal",
+                "template" : "4b182a5f0a0a0b99006964c89750f6d7",
+		"cmdb_ci": "0c43bc5fc61122750182c13269a7a3ef",
+               "business_service":"26da329f0a0a0bb400f69d8159bc753d"
 	}
 } """
 )     
