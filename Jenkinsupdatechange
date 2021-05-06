@@ -39,8 +39,6 @@ pipeline {
 		"requested_by": {
 			"email": "abel.tuter@example.com"
 		},
-		"start_date": "2021-02-05 08:00:00",
-		"end_date": "2021-02-15 08:00:00",
 		"cab_required": true,
 		"cab_delegate": {
 			"name": "Andrew Och"
