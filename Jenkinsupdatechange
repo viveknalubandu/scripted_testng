@@ -31,28 +31,7 @@ pipeline {
   stage('Deploy'){
    agent any
    steps{
-     snDevOpsChange(	changeRequestDetails: """ {
-	"setCloseCode": true,
-	"attributes": {
-		"description": "DevOps test ",
-		"priority": "5",
-		"requested_by": {
-			"email": "abel.tuter@example.com"
-		},
-		"cab_required": true,
-		"cab_delegate": {
-			"name": "Andrew Och"
-		},
-		"justification": "Connect your planning ",
-		"implementation_plan": "Test implementation plan",
-		"test_plan": "Test plan to test the tests which test the test-now application",
-                "type":"normal",
-                "template" : "4b182a5f0a0a0b99006964c89750f6d7",
-		"cmdb_ci": "0c43bc5fc61122750182c13269a7a3ef",
-               "business_service":"26da329f0a0a0bb400f69d8159bc753d"
-	}
-} """
-)     
+     snDevOpsChange()     
    }
   }
  }
