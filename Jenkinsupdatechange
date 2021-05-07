@@ -44,8 +44,8 @@ pipeline {
 		"test_plan": "Test plan to test the tests which test the test-now application",
 		"cmdb_ci": "0c43bc5fc61122750182c13269a7a3ef",
 		"business_service":"26da329f0a0a0bb400f69d8159bc753d",
-		"type":"emergency",
-		"template":"4b0c59fb0a0a0b990034955050427d5f"
+		"type":"standard",
+		"template":"1c8e02ec47410200e90d87e8dee49057"
 	}
 } """)     
    }
