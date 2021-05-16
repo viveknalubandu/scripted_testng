@@ -39,8 +39,8 @@ pipeline {
 		"justification": "Connect your planning ",
 		"implementation_plan": "Test implementation plan",
 		"test_plan": "Test plan to test the tests which test the test-now application",
-		"cmdb_ci": "0c43bc5fc61122750182c13269a7a3ef",
-		"business_service":"26da329f0a0a0bb400f69d8159bc753d",
+		"cmdb_ci": "46bb0b240a0a0b89004909ee2fe530ef",
+		"business_service":"044aad03933a31003b4bb095e57ffbf5",
 		"type":"standard",
 		"standard_change_template":"508e02ec47410200e90d87e8dee49058"
 		
