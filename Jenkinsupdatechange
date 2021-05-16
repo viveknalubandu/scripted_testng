@@ -42,7 +42,7 @@ pipeline {
 		//"cmdb_ci": "0c43bc5fc61122750182c13269a7a3ef",
 		//"business_service":"26da329f0a0a0bb400f69d8159bc753d",
 		"type":"standard",
-		"template":"508e02ec47410200e90d87e8dee49058"
+		"standard_change_template":"508e02ec47410200e90d87e8dee49058"
 		
 	}
 } """)     
