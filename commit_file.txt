@@ -2,3 +2,4 @@ WI0001001- Move work item to Ready for testing
 sd
 swad
 dc
+STRY0010004: Add test
