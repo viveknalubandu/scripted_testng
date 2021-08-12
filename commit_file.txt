@@ -6,3 +6,4 @@ STRY0010004: Add test
 STRY0010033:worktiem
 STRY0010084: work item
 STRY0010016: workitem
+STRY0010016: new work item
