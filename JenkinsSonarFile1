@@ -1,0 +1,45 @@
+pipeline {
+
+  agent any
+  tools {
+       maven 'Maven'
+   }
+  stages {
+
+	stage('Build') {
+       
+           steps {
+              echo 'Build sonar project'
+              sh 'mvn compile'
+              sh 'mvn verify'
+           }
+	   post {
+	      
+	      always {
+	        junit '**/target/surfire-reports/*xml'
+	      }
+	   
+	   }
+           
+       }
+       
+       stage('SonarStage') {
+       
+	       environment {
+	    		 SCANNER_HOME = tool 'sonarScanner'
+	  		}
+           steps {
+              
+             withSonarQubeEnv('sonarQube_local') {
+			       sh '${SCANNER_HOME}/bin/sonar-scanner'
+		       
+        		}
+	        
+        	
+           }
+           
+       }
+ 	
+ 	
+ 	}
+}
