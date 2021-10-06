@@ -13,13 +13,6 @@ pipeline {
               sh 'mvn compile'
               sh 'mvn verify'
            }
-	   post {
-	      
-	      always {
-	        junit '**/target/surfire-reports/*xml'
-	      }
-	   
-	   }
            
        }
        
