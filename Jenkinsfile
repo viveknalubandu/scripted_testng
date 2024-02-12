@@ -22,8 +22,6 @@ pipeline {
    agent any
    steps {
     checkout scm
-    sh 'mvn clean test'
-    step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
     snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "devops_scripted_demo.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "devops_scripted_demo"}],"stageName": "Tests"}""") 
     snDevOpsPackage(name: "sentimentpackage", artifactsPayload: """{"artifacts": [{"name": "devops_scripted_demo.jar","repositoryName": "devops_scripted_demo","version":"${version}"}]}""")
    }
