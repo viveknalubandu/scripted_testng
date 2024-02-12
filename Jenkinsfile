@@ -29,7 +29,7 @@ pipeline {
   stage('Deploy'){
    agent any
    steps{
-     snDevOpsChange(configuraitonName:"empkiranutah9")     
+     snDevOpsChange(configurationName:"empkiranutah9")     
    }
   }
  }
