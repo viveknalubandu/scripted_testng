@@ -22,14 +22,14 @@ pipeline {
    agent any
    steps {
     checkout scm
-    snDevOpsArtifact(configurationName:"DevOps-vkvan3.service-now.com-1708929154110",artifactsPayload:"""{"artifacts": [{"name": "devops_scripted_demo.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "devops_scripted_demo"}],"stageName": "Tests"}""") 
-    snDevOpsPackage(configurationName:"DevOps-vkvan3.service-now.com-1708929154110",name: "sentimentpackage", artifactsPayload: """{"artifacts": [{"name": "devops_scripted_demo.jar","repositoryName": "devops_scripted_demo","version":"${version}"}]}""")
+    snDevOpsArtifact(configurationName:"DevOps-vkvan1.service-now.com-1709825996292",artifactsPayload:"""{"artifacts": [{"name": "devops_scripted_demo.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "devops_scripted_demo"}],"stageName": "Tests"}""") 
+    snDevOpsPackage(configurationName:"DevOps-vkvan1.service-now.com-1709825996292",name: "sentimentpackage", artifactsPayload: """{"artifacts": [{"name": "devops_scripted_demo.jar","repositoryName": "devops_scripted_demo","version":"${version}"}]}""")
    }
   }
   stage('Deploy'){
    agent any
    steps{
-     snDevOpsChange(configurationName:"DevOps-vkvan3.service-now.com-1708929154110")     
+     snDevOpsChange(configurationName:"DevOps-vkvan1.service-now.com-1709825996292")     
    }
   }
  }
