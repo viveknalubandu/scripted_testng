@@ -30,7 +30,7 @@ pipeline {
    agent any
    steps{
      //snDevOpsChange(configurationName:"DevOps-vkvan1.service-now.com-1709825996292")  
-     snDevOpsChange(configurationName:"DevOps-vkvan1.service-now.com-1709825996292")
+     snDevOpsChange(configurationName:"DevOps-vkvan1.service-now.com-1709829438771")
    }
 }
 }
