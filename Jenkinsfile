@@ -30,7 +30,8 @@ pipeline {
    agent any
    steps{
      //snDevOpsChange(configurationName:"DevOps-vkvan1.service-now.com-1709825996292")  
-     snDevOpsChange(configurationName:"DevOps-vkvan1.service-now.com-1709829438771")
+     //snDevOpsChange(configurationName:"DevOps-vkvan1.service-now.com-1709829438771")
+     snDevOpsChange changeCreationTimeOut: 3600, changeRequestDetails: '{ "attributes": { "short_description": "Test description", "priority": "1","comments": "This update for work notes is from jenkins file", "work_notes": "test work notes"}, "setCloseCode": false, "autoCloseChange": true }', changeStepTimeOut: 18000, configurationName: 'DevOps-vkvan1.service-now.com-1709829438771', pollingInterval: 60
    }
 }
 }
