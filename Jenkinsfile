@@ -22,8 +22,8 @@ pipeline {
    agent any
    steps {
     checkout scm
-    snDevOpsArtifact(configurationName:"DevOps-vkvan1.service-now.com-1709829438771",artifactsPayload:"""{"artifacts": [{"name": "devops_scripted_demo.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "devops_scripted_demo"}],"stageName": "Tests"}""") 
-    snDevOpsPackage(configurationName:"DevOps-vkvan1.service-now.com-1709829438771",name: "sentimentpackage", artifactsPayload: """{"artifacts": [{"name": "devops_scripted_demo.jar","repositoryName": "devops_scripted_demo","version":"${version}"}]}""")
+    snDevOpsArtifact(configurationName:"DevOps-vkvan1.service-now.com-1712341142032",artifactsPayload:"""{"artifacts": [{"name": "devops_scripted_demo.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "devops_scripted_demo"}],"stageName": "Tests"}""") 
+    snDevOpsPackage(configurationName:"DevOps-vkvan1.service-now.com-1712341142032",name: "sentimentpackage", artifactsPayload: """{"artifacts": [{"name": "devops_scripted_demo.jar","repositoryName": "devops_scripted_demo","version":"${version}"}]}""")
    }
   }
   stage('Deploy'){
@@ -32,7 +32,7 @@ pipeline {
      //snDevOpsChange(configurationName:"DevOps-vkvan1.service-now.com-1709825996292")  
      //snDevOpsChange(configurationName:"DevOps-vkvan1.service-now.com-1709829438771")
      //snDevOpsChange changeCreationTimeOut: 3600, changeRequestDetails: '{ "attributes": { "short_description": "Test description", "priority": "1","comments": "This update for work notes is from jenkins file", "work_notes": "test work notes"}, "setCloseCode": false, "autoCloseChange": true }', changeStepTimeOut: 18000, configurationName: 'DevOps-vkvan1.service-now.com-1709829438771', pollingInterval: 60
-     snDevOpsChange changeCreationTimeOut: 3600, changeRequestDetails: '{ "attributes": { "short_description": "Test description", "priority": "1","comments": "This update for work notes is from jenkins file", "work_notes": "test work notes"}, "setCloseCode": false, "autoCloseChange": true }', changeStepTimeOut: 18000, configurationName: 'DevOps-vkvan1.service-now.com-1709829438771', pollingInterval: 60
+     snDevOpsChange changeCreationTimeOut: 3600, changeRequestDetails: '{ "attributes": { "short_description": "Test description", "priority": "1","comments": "This update for work notes is from jenkins file", "work_notes": "test work notes"}, "setCloseCode": false, "autoCloseChange": true }', changeStepTimeOut: 18000, configurationName: 'DevOps-vkvan1.service-now.com-1712341142032', pollingInterval: 60
    }
 }
 }
