@@ -29,7 +29,7 @@ pipeline {
    agent any
    steps{
    echo "deploy"
-   snDevOpsChange()
+   snDevOpsChange(configurationName:"DevOps-xrp1x2.service-now.com-1717474644960")
    }
   }
  }
