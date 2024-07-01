@@ -23,7 +23,7 @@ pipeline {
    steps {
     checkout scm
     snDevOpsArtifact(configurationName:"DevOps-vknvan5.service-now.com-1719848844462",artifactsPayload:"""{"artifacts": [{"name": "devops_scripted_demo.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "devops_scripted_demo"}],"stageName": "Tests"}""") 
-    snDevOpsPackage(configurationName:"DevOps-vknvan5.service-now.com-1719848844462",name: "sentimentpackage", artifactsPayload: """{"artifacts": [{"name": "devops_scripted_demo.jar","repositoryName": "devops_scripted_demo","version":"${version}"}]}""")
+    //snDevOpsPackage(configurationName:"DevOps-vknvan5.service-now.com-1719848844462",name: "sentimentpackage", artifactsPayload: """{"artifacts": [{"name": "devops_scripted_demo.jar","repositoryName": "devops_scripted_demo","version":"${version}"}]}""")
    }
   }
   stage('Deploy'){
