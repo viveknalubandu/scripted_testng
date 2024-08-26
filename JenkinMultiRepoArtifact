@@ -16,7 +16,7 @@ pipeline {
                 // echo "Building Pipeline" 
                 // checkout scm
                 dir("Mdavireddy") {
-                    git url: 'https://github.com/mdavireddy/rabbitmq-demo.git' branch:'main'
+                    git url: 'https://github.com/mdavireddy/rabbitmq-demo.git',branch:'main'
                     
                 }
                 dir("viveknalubandu") {
