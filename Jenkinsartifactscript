@@ -13,82 +13,86 @@ pipeline {
     stages {
         stage("checkout") {
             steps {
-                
-                //echo "Building Pipeline" 
-                //checkout scm
-		dir("Mdavireddy") {
-                    git url: 'https://github.com/mdavireddy/rabbitmq-demo.git'
-                }
-                dir("viveknalubandu") {
-                    git url: 'https://github.com/viveknalubandu/scripted_testng.git'
-                }
+                // echo "Building Pipeline" 
+                // checkout scm
+                dir("Mdavireddy") {
+                    git url: 'https://github.com/mdavireddy/rabbitmq-demo.git'
+                }
+                dir("viveknalubandu") {
+                    git url: 'https://github.com/viveknalubandu/scripted_testng.git'
+                }
             }
         }
 
         stage("build") {
             steps {
-                
                 sh 'mvn clean install -DskipTests'
                 echo 'Building..Pipeline'
                 echo "Pipeline name is ${env.JOB_NAME}"
- 				echo "Pipleine run rumber is ${env.BUILD_NUMBER}"
- 				echo "Stage name is ${env.STAGE_NAME}"
- 				echo "GIT branch is ${env.GIT_BRANCH}"
-                echo "globalprops -- ${env.snartifacttoolId} -- ${env.snhost} -- ${env.snuser} -- ${env.snpassword} ";
-		
-	        snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "devops_pipeline_demo.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "devops_pipeline_demo"}],"stageName": "build"}""")            
+                echo "Pipeline run number is ${env.BUILD_NUMBER}"
+                echo "Stage name is ${env.STAGE_NAME}"
+                echo "GIT branch is ${env.GIT_BRANCH}"
+                echo "globalprops -- ${env.snartifacttoolId} -- ${env.snhost} -- ${env.snuser} -- ${env.snpassword}"
 
+                snDevOpsArtifact(artifactsPayload: """{
+                    "artifacts": [{
+                        "name": "devops_pipeline_demo.jar",
+                        "version": "${version}",
+                        "semanticVersion": "${semanticVersion}",
+                        "repositoryName": "devops_pipeline_demo"
+                    }],
+                    "stageName": "build"
+                }""")
+            }
         }
-       }
         
-	stage('inttests') {
+        stage('inttests') {
             steps {
-
                 echo "Integration Test"
                 sh "mvn test"
                 sleep 5
             }
             post {
                 always {
-                    junit '**/target/surefire-reports/*.xml' 
+                    junit '**/target/surefire-reports/*.xml'
                 }
-          }
+            }
         }
-	
+    
         stage("stage") {
-             
-                    steps{
-		     snDevOpsPackage(name: "balu-package", artifactsPayload:"""{"artifacts": [{"name": "devops_pipeline_demo.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "devops_pipeline_demo"}],"stageName": "stage"}""")            
-		     //snDevOpsChange()
-                        echo "deploy in prod"
-                   }
-                
-        }
-	
-	stage('unit-tests') {
             steps {
-
+                snDevOpsPackage(name: "balu-package", artifactsPayload: """{
+                    "artifacts": [{
+                        "name": "devops_pipeline_demo.jar",
+                        "version": "${version}",
+                        "semanticVersion": "${semanticVersion}",
+                        "repositoryName": "devops_pipeline_demo"
+                    }],
+                    "stageName": "stage"
+                }""")
+                // snDevOpsChange()
+                echo "deploy in prod"
+            }
+        }
+    
+        stage('unit-tests') {
+            steps {
                 echo "Unit Test"
                 sh "mvn test"
                 sleep 5
-
             }
             post {
                 always {
-                    junit '**/target/surefire-reports/*.xml' 
+                    junit '**/target/surefire-reports/*.xml'
                 }
-          }
+            }
         }
-	
+    
         stage("deploy") {
-             
-                    steps{
-                        
-			echo "deploy in prod"
-                   }
-                
+            steps {
+                echo "deploy in prod"
+            }
         }
-	
     }
-
 }
+
