@@ -16,10 +16,10 @@ pipeline {
                 
                 //echo "Building Pipeline" 
                 //checkout scm
-		dir('Mdavireddy') {
+		dir("Mdavireddy") {
                     git url: 'https://github.com/mdavireddy/rabbitmq-demo.git'
                 }
-                dir('viveknalubandu') {
+                dir("viveknalubandu") {
                     git url: 'https://github.com/viveknalubandu/scripted_testng.git'
                 }
             }
