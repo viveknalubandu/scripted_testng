@@ -67,6 +67,7 @@ pipeline {
                     "stageName": "stage"
                 }""")
                 echo "deploy in prod"
+                snDevOpsChange()
             }
         }
     
