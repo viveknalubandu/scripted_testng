@@ -29,7 +29,7 @@ pipeline {
    agent any
    steps{
    echo "deploy"
-   snDevOpsChange()
+   snDevOpsChange(configurationName:"DevOps-empvnalubanduy4.service-now.com-1773355570804")
    }
   }
  }
